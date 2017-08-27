@@ -62,5 +62,5 @@ typings/
 
 # other files to ignore
 src/api/db.json
-dist/**/**
+dist/**
 

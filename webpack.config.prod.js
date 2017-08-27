@@ -47,19 +47,25 @@ export default {
         minifyURLs:true
       },
       inject: true,
-      // Properties you define here are available in index.html
-      // using htmlWebpackPlugin.options.varName
-      trackJSToken: process.env.trackJSToken
     }),
     // Eliminate duplicate packages when generating bundle
     new webpack.optimize.DedupePlugin(),
     // Minify JS
-    new webpack.optimize.UglifyJsPlugin()
+    new webpack.optimize.UglifyJsPlugin(),
+
+    // to allow import jQuery
+    new webpack.ProvidePlugin({
+      jQuery: 'jquery',
+      $: 'jquery',
+      jquery: 'jquery'
+    })
   ],
   module: {
     loaders: [
       {test: /\.js$/, exclude: /node_modules/, loaders: ['babel']},
-      {test: /\.css$/, loader: ExtractTextPlugin.extract('css?sourceMap')}
+      {test: /\.css$/, loader: ExtractTextPlugin.extract('css?sourceMap')},
+      {test: /\.scss$/, loader: ExtractTextPlugin.extract("style", "css!sass")},
+      {test: /\.(jpe?g|png|woff|woff2|eot|ttf|svg)(\?[a-z0-9=.]+)?$/, loader: 'url-loader?limit=100000'}
     ]
   }
 }
