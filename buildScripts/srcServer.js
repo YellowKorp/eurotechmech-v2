@@ -1,8 +1,9 @@
 import express from 'express';
 import path from 'path';
-import open from 'open';
 import webpack from 'webpack';
 import config from '../webpack.config.dev';
+
+import bodyParser from 'body-parser';
 
 /* eslint-disable no-console */
 
@@ -15,6 +16,11 @@ app.use(require('webpack-dev-middleware')(compiler, {
   publicPath: config.output.publicPath
 }));
 app.use(express.static('public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
+app.use(bodyParser.json());       // to support JSON-encoded bodies
 
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '../src/index.html'));
@@ -22,17 +28,27 @@ app.get('/', function(req, res) {
 
 app.get('/users', function(req, res) {
   // Hard coding for simplicity
+  console.log("get users");
   res.json([
-    {"id": 1, "firstName": "Bob", "lastName": "Smith", "email": "bob@gmail.com"},
+    {"id": 1, "firstName": "Bob2", "lastName": "Smith", "email": "bob@gmail.com"},
     {"id": 2, "firstName": "John", "lastName": "Doe", "email": "john@gmail.com"},
     {"id": 3, "firstName": "Eve", "lastName": "Adams", "email": "eve@gmail.com"}
   ]);
 });
 
+app.post('/postContactForm', function(req, res) {
+  // var name = req.body.name,
+  //     color = req.body.color;
+  console.log("/postContactForm", req.body);
+  res.json({status: "OK"});
+});
+
+//import open from 'open';
 app.listen(port, function(err) {
   if (err) {
     console.log(err);
   } else {
-    open('http://localhost:'+ port);
+    console.log("Node app is running at localhost:" + port);
+    //open('http://localhost:'+ port);
   }
 });
