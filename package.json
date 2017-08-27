@@ -22,7 +22,8 @@
     "build": "babel-node buildScripts/build.js",
     "postbuild": "babel-node buildScripts/distServer.js",
     "deploy": "surge ./dist",
-    "start2": "babel-node buildScripts/build.js"
+    "start2": "babel-node buildScripts/build.js",
+    "start": "./node_modules/bin/babel-node buildScripts/distServer.js"
   },
   "engines": {
     "node": "v8.0.0",

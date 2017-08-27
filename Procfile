@@ -1,1 +1,1 @@
-web: babel-node buildScripts/distServer.js
+web: npm start
