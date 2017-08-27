@@ -25,6 +25,10 @@
     "start2": "babel-node buildScripts/build.js",
     "start": "node index.js"
   },
+  "engines": {
+    "node": "v8.0.0",
+    "npm": "5.3.0"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/YellowKorp/eurotechmech-v2.git"
