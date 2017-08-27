@@ -23,7 +23,7 @@
     "postbuild": "babel-node buildScripts/distServer.js",
     "deploy": "surge ./dist",
     "start2": "babel-node buildScripts/build.js",
-    "start": "node dist/index.js"
+    "start": "node index.js"
   },
   "engines": {
     "node": "v8.0.0",
@@ -40,6 +40,7 @@
   },
   "homepage": "https://github.com/CodeTaha/js-starterkit#readme",
   "dependencies": {
+    "compression": "1.6.2",
     "cors": "2.8.4",
     "express": "4.14.0",
     "jquery": "3.2.1",

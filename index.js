@@ -5,11 +5,14 @@
 let express =  require('express');
 let cors = require('cors');
 const path = require('path');
+import compression from 'compression';
 
 const app = express();
 app.use(cors());
 
-app.use(express.static(__dirname + '/dist'));
+app.use(compression());
+app.use(express.static('dist'));
+app.use(express.static('public'));
 
 app.set('port', (process.env.PORT || 5000));
 
