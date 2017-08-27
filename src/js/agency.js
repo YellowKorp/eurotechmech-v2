@@ -6,7 +6,7 @@ import 'bootstrap/dist/js/bootstrap';
 import '../externals/jquery-easing';
 
 let agency = () => {
-  console.log("agency called3");
+  console.log("agency called4");
   // Offset for Main Navigation
   $('a.page-scroll').bind('click', function(event) {
     var $anchor = $(this);

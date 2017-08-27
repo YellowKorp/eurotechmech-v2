@@ -19,11 +19,11 @@
     "start-mockapi": "json-server --watch src/api/db.json --port 3001",
     "clean-dist": "rimraf ./dist && mkdir dist",
     "prebuild": "npm-run-all clean-dist test lint",
-    "build": "babel-node buildScripts/build.js",
+    "build": "npm run prod-build",
     "postbuild": "babel-node buildScripts/distServer.js",
     "deploy": "surge ./dist",
-    "start2": "babel-node buildScripts/build.js",
-    "start": "node index.js"
+    "prod-build": "babel-node buildScripts/build.js",
+    "start": "node buildScripts/distServer.js"
   },
   "engines": {
     "node": "v8.0.0",
