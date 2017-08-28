@@ -5,6 +5,8 @@ let express =  require('express');
 let cors = require('cors');
 const path = require('path');
 let compression = require('compression');
+let bodyParser = require('body-parser');
+let sendMail = require('./backend/sendMail').sendMail;
 
 /* eslint-disable no-console */
 
@@ -14,6 +16,11 @@ app.use(cors());
 app.use(compression());
 app.use(express.static('dist'));
 app.use(express.static('public'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
+  extended: true
+}));
+app.use(bodyParser.json());       // to support JSON-encoded bodies
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -28,6 +35,11 @@ app.get('/users', function(req, res) {
     {"id": 2,"firstName":"Tammy","lastName":"Norton","email":"tnorton@yahoo.com"},
     {"id": 3,"firstName":"Tina","lastName":"Lee","email":"lee.tina@hotmail.com"}
   ]);
+});
+
+app.post('/postContactForm', function(req, res) {
+  sendMail(req.body);
+  res.json({status: "OK"});
 });
 
 // When deploying on production

@@ -4,6 +4,7 @@ import webpack from 'webpack';
 import config from '../webpack.config.dev';
 
 import bodyParser from 'body-parser';
+import {sendMail} from './backend/sendMail';
 
 /* eslint-disable no-console */
 
@@ -37,9 +38,7 @@ app.get('/users', function(req, res) {
 });
 
 app.post('/postContactForm', function(req, res) {
-  // var name = req.body.name,
-  //     color = req.body.color;
-  console.log("/postContactForm", req.body);
+  sendMail(req.body);
   res.json({status: "OK"});
 });
 

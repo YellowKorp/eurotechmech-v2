@@ -3,9 +3,6 @@
  */
 
 import 'whatwg-fetch';
-import getBaseUrl from './baseUrl';
-
-const baseUrl = getBaseUrl();
 
 export function postContactForm(form) {
   //return "awesome it work";
