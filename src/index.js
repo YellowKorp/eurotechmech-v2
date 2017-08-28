@@ -7,6 +7,7 @@ import './scss/fonts.scss';
 import './scss/agency.scss';
 //import {getUsers, deleteUser} from './api/userApi';
 import {agency} from './js/agency';
+import './js/contact_me';
 
 agency();
 /*getUsers().then(result => {

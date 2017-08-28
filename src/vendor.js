@@ -10,4 +10,5 @@ import 'font-awesome/css/font-awesome.css';
 import './scss/fonts.scss';
 import $ from 'jquery';
 import 'bootstrap/dist/js/bootstrap';
+import './js/jqBootstrapValidation';
 
