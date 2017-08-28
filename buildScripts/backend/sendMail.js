@@ -1,7 +1,7 @@
 /**
  * Created by taha on 8/27/17.
  */
-import nodemailer from 'nodemailer';
+let nodemailer = require('nodemailer');
 /* eslint-disable no-console */
 // create reusable transporter object using the default SMTP transport
 let transporter = nodemailer.createTransport({
