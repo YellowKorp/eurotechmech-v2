@@ -23,7 +23,8 @@
     "postbuild": "babel-node buildScripts/distServer.js",
     "deploy": "surge ./dist",
     "prod-build": "babel-node buildScripts/build.js",
-    "start": "node buildScripts/distServer.js"
+    "start": "node buildScripts/distServer.js",
+    "comment": "for backend developemnt prepend nodemon --exec in open:src"
   },
   "engines": {
     "node": "v8.0.0",
@@ -85,6 +86,7 @@
     "sass-loader": "6.0.6",
     "style-loader": "0.13.1",
     "surge": "0.19.0",
+    "underscore": "1.8.3",
     "url-loader": "0.5.9",
     "webpack": "1.13.2",
     "webpack-dev-middleware": "1.8.4",
