@@ -6,7 +6,7 @@
   "scripts": {
     "prestartdev": "babel-node buildScripts/startMessage.js",
     "startdev": "npm-run-all --parallel security-check open:src lint:watch test:watch start-mockapi",
-    "open:src": "nodemon --exec babel-node buildScripts/srcServer.js",
+    "open:src": "babel-node buildScripts/srcServer.js",
     "lint": "esw webpack.config.* src buildScripts --color",
     "lint:watch": "npm run lint -- --watch",
     "security-check": "nsp check",
@@ -54,6 +54,7 @@
     "babel-loader": "6.2.5",
     "babel-preset-env": "1.6.0",
     "babel-register": "6.16.3",
+    "bootbox": "4.4.0",
     "bootstrap": "3.3.7",
     "chai": "3.5.0",
     "chalk": "1.1.3",

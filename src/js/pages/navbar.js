@@ -21,14 +21,14 @@ let _nav_template = _.template(`
             <a href="#page-top"></a>
           </li>
           <li>
-            <a class="page-scroll" href="#services">Services</a>
+            <a class="page-scroll" href="#products">Products</a>
           </li>
           <li>
             <a class="page-scroll" href="#portfolio">Industries</a>
           </li>
-          <li>
-            <a class="page-scroll" href="#about">About</a>
-          </li>
+          <!--<li>-->
+            <!--<a class="page-scroll" href="#about">About</a>-->
+          <!--</li>-->
           <!--<li>-->
           <!--<a class="page-scroll" href="#team">Team</a>-->
           <!--</li>-->
