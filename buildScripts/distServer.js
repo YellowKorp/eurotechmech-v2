@@ -6,7 +6,7 @@ let cors = require('cors');
 const path = require('path');
 let compression = require('compression');
 let bodyParser = require('body-parser');
-let sendMail = require('./backend/sendMail').sendMail;
+let sendMail = require('./backend/sendMail');
 
 /* eslint-disable no-console */
 

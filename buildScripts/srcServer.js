@@ -4,7 +4,7 @@ import webpack from 'webpack';
 import config from '../webpack.config.dev';
 
 import bodyParser from 'body-parser';
-import {sendMail} from './backend/sendMail';
+import sendMail from './backend/sendMail';
 
 /* eslint-disable no-console */
 
