@@ -3,12 +3,14 @@
  */
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
-import './scss/fonts.scss';
-import './scss/agency.scss';
+
+import './scss/style.scss';
 //import {getUsers, deleteUser} from './api/userApi';
 import {agency} from './js/agency';
 import './js/contact_me';
+import {main} from './js/main';
 
+main();
 agency();
 /*getUsers().then(result => {
   let usersBody = "";

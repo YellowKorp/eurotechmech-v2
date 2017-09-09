@@ -1,7 +1,7 @@
 /**
  * Created by taha on 8/27/17.
  */
-import nodemailer from 'nodemailer';
+let nodemailer = require('nodemailer');
 /* eslint-disable no-console */
 // create reusable transporter object using the default SMTP transport
 let transporter = nodemailer.createTransport({
@@ -14,7 +14,7 @@ let transporter = nodemailer.createTransport({
   }
 });
 
-export function sendMail(body) {
+module.exports = function(body) {
   // setup email data with unicode symbols
   let mailOptions = {
     from: '<'+body.email+'>', // sender address
@@ -31,4 +31,4 @@ export function sendMail(body) {
     }
     console.log('Message %s sent: %s', info.messageId, info.response);
   });
-}
+};

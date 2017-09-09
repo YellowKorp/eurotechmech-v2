@@ -1,0 +1,33 @@
+@import "fonts";
+
+@import "variables";
+@import "mixins";
+
+@import "agency";
+
+
+.products {
+  &-item {
+    &:hover {
+      background-color: $grey-bg-hover;
+      cursor: pointer;
+    }
+
+  }
+  &-heading {
+    margin: 15px 0;
+    text-transform: none;
+  }
+  &-dialog {
+    &__label {
+      margin: 0.2em;
+      display: inline-block;
+      font-size: 18px;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+
