@@ -1,10 +1,10 @@
 /**
  * Created by taha on 9/9/17.
  */
-import _ from 'underscore';
 import $ from 'jquery';
+import _ from 'underscore';
 
-let nav_template = _.template(`
+let _nav_template = _.template(`
     <div class="container">
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header page-scroll">
@@ -41,7 +41,7 @@ let nav_template = _.template(`
     </div>`);
 
 let draw_navbar = () => {
-  $("#mainNav").append(nav_template)
+  $("#mainNav").append(_nav_template)
 };
 
 export {draw_navbar};
