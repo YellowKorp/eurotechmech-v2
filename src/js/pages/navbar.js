@@ -21,7 +21,7 @@ let _nav_template = _.template(`
             <a href="#page-top"></a>
           </li>
           <li>
-            <a class="page-scroll" href="#products">Products</a>
+            <a class="page-scroll" href="#products">Products2</a>
           </li>
           <li>
             <a class="page-scroll" href="#portfolio">Industries</a>

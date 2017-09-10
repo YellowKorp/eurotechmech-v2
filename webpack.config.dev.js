@@ -7,6 +7,8 @@ export default {
   devtool: 'inline-source-map',
   noInfo: false,
   entry: [
+    //'eventsource-polyfill', // necessary for hot reloading with IE
+    'webpack-hot-middleware/client?reload=true', // for hot reloading
     path.resolve(__dirname, 'src/index')
   ],
   target: 'web',
@@ -16,6 +18,8 @@ export default {
     filename: 'bundle.js'
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin(),
     new HtmlWebpackPlugin({
       template: 'src/index.html',
       inject: true
